@@ -135,9 +135,6 @@ func init() {
 	if flTLSClientCert == "" && flTLSClientKey != "" {
 		argError("specified -tls-client-key without specifying -tls-client-cert")
 	}
-	if flTLSNoVerify && flTLSCACert != "" {
-		argError("cannot specify -tls-ca-cert with -tls-no-verify (CA cert would not be used)")
-	}
 	if flTLSNoVerify && flTLSServerName != "" {
 		argError("cannot specify -tls-server-name with -tls-no-verify (server name would not be used)")
 	}
